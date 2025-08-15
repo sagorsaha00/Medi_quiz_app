@@ -3,6 +3,7 @@ import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import 'react-native-reanimated';
+ 
 
 import { useColorScheme } from '@/hooks/useColorScheme';
 
@@ -18,11 +19,14 @@ export default function RootLayout() {
   }
 
   return (
+    
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+
       <Stack initialRouteName='index' screenOptions={{ headerShown: false }}>
-        
+         
          <Stack.Screen name="index" />
-       
+         
+
       </Stack>
       <StatusBar style="auto" />
     </ThemeProvider>

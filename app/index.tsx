@@ -18,7 +18,7 @@ export default function App() {
   const opacity = useSharedValue(1);
 
   useEffect(() => {
-    // Start SVG rotation + fade loop
+    
     rotation.value = withRepeat(
       withTiming(360, { duration: 2000, easing: Easing.linear }),
       -1

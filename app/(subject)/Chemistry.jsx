@@ -158,7 +158,7 @@ export default function App() {
                 activeOpacity={0.85}
                 onPress={() => {
                   if (s.id === "exam") {
-                    router.push("/(exam_section)/exam");
+                    router.push("/(exam_section)/exam?subject=Chemistry");
                   } else if (s.id === "quiz") {
                     router.push("/(exam_section)/quiz");
                   } else if (s.id === "video") {

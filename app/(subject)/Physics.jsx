@@ -1,5 +1,6 @@
 import { Ionicons } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
+import { useRouter } from "expo-router";
 import LottieView from "lottie-react-native";
 import { useEffect, useState } from "react";
 import {
@@ -22,6 +23,7 @@ import Animated, {
 } from "react-native-reanimated";
 
 export default function App() {
+  const router = useRouter();
   const [theme, setTheme] = useState("dark");
 
   const themeAnim = useSharedValue(theme === "dark" ? 0 : 1);
@@ -137,10 +139,7 @@ export default function App() {
               <Ionicons name="search" size={18} color="#9CA3AF" />
               <TextInput
                 placeholder=" Search courses, quizzes..."
-                style={[
-                  styles.searchText,
-                  { color: "#9CA3AF", placeholderTextColor: "#0000" },
-                ]}
+                style={[styles.searchText, { color: "#9CA3AF" }]}
               ></TextInput>
             </View>
           </View>
@@ -150,6 +149,15 @@ export default function App() {
               <TouchableOpacity
                 key={s.id}
                 activeOpacity={0.85}
+                onPress={() => {
+                  if (s.id === "exam") {
+                    router.push("/(exam_section)/exam?subject=physics");
+                  } else if (s.id === "quiz") {
+                    router.push("/(exam_section)/quiz");
+                  } else if (s.id === "video") {
+                    router.push("/(exam_section)/video");
+                  }
+                }}
                 style={[
                   styles.sectionCard,
                   {

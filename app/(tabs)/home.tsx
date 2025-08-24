@@ -29,7 +29,7 @@ export default function QuizHomeScreen() {
       lib: Ionicons,
     },
     {
-      name: 'Math',
+      name: 'GK',
       icon: 'calculator',
       color: '#FFD700',
       questions: 95,
@@ -43,14 +43,14 @@ export default function QuizHomeScreen() {
       lib: Ionicons,
     },
     {
-      name: 'Biological',
+      name: 'Biology',
       icon: 'dna',
       color: '#FF4500',
       questions: 30,
       lib: FontAwesome5,
     },
     {
-      name: 'Geography',
+      name: 'Physics',
       icon: 'map-outline',
       color: '#32CD32',
       questions: 24,
@@ -174,7 +174,7 @@ export default function QuizHomeScreen() {
               ]}
             >
               <TouchableOpacity
-                onPress={() => router.push("/(subject)/" + cat.name)}
+                onPress={() => router.push(`/(subject)/${cat.name}`)}
                 style={{ alignItems: 'center' }}
               >
                 <View
